@@ -9,7 +9,7 @@ pipeline {
         
         stage ('Push to docker registry'){
             steps{
-                sh 'docker login --username=mydocker070707 --password=dckr_pat_6l6e-8FjwknEHpkxhm004KTYjAY'
+                sh 'docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD'
                 sh 'docker tag nginx-new:v3 mydocker070707/nginx:latest'
                 sh 'docker push mydocker070707/nginx:latest'
             }
