@@ -14,7 +14,7 @@ pipeline {
                 sh 'docker push mydocker070707/nginx:latest'
             }
         }
-        stage('Run container'){
+        stage('Deploy'){
             steps{
                 echo 'Starting container'
                 sh 'docker run -itd -p 90:80 nginx-new:v3'
