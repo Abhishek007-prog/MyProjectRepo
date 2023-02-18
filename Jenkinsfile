@@ -1,12 +1,18 @@
 pipeline {
-    agent{
-        docker {image 'nginx:latest'}
-    }
-
+    agent any
     stages {
         stage('Build') {
+            agent {
+                docker {
+                    image 'gradle:6.7-jdk11'
+                    // Run the container on the node specified at the
+                    // top-level of the Pipeline, in the same workspace,
+                    // rather than on a new node entirely:
+                    reuseNode true
+                }
+            }
             steps {
-                sh 'docker build -t nginx:v1 .'
+                sh 'gradle --version'
             }
         }
     }
