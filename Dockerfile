@@ -14,4 +14,4 @@ EXPOSE 80
 
 CMD ["nginx"]
 
-CMD ["sleep" "600"]
+ENTRYPOINT ["sleep" "600"]
