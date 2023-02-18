@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: sample-app-rs
+  labels:
+    app: sample-app
+
+spec:
+  selector:
+    matchLabels:
+      app: sample-app
+  replicas: 2
+  template:
+    metadata:
+      name: sample-pod
+      labels:
+        app: sample-app-pod
+    spec:
+      containers:
+      - name: sample-app
+        image: dockerhub.io/image
