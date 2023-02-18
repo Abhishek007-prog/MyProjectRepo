@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker build -t nginx:v1 .'
+                sh 'docker build -t nginx:v2 .'
             }
         }
     }
