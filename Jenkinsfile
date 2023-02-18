@@ -6,5 +6,12 @@ pipeline {
                 sh 'docker build -t nginx:v2 .'
             }
         }
+        
+        stage('Run container'){
+            steps{
+                echo 'Starting container'
+                sh 'docker run nginx:v2'
+            }
+        }
     }
 }
