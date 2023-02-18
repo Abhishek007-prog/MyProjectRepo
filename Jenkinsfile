@@ -10,7 +10,7 @@ pipeline {
         stage('Run container'){
             steps{
                 echo 'Starting container'
-                sh 'docker run -itd -p 90:80 nginx:v3'
+                sh 'docker run -itd -p 90:80 nginx-new:v3'
             }
         }
     }
